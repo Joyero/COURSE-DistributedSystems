@@ -29,6 +29,7 @@ public class ServerClass implements RemoteInterface {
         
         try {
             ServerClass obj = new ServerClass();
+	    System.setProperty("java.rmi.server.hostname","192.168.X.X");
             RemoteInterface stub = (RemoteInterface) UnicastRemoteObject.exportObject(obj, 0);
 
             Registry registry = LocateRegistry.getRegistry();
